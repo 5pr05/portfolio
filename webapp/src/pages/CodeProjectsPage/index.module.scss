@@ -1,0 +1,29 @@
+@use 'reset-css/sass/reset' as *;
+
+.container {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    &:hover {
+        background-color: blue;
+    }
+}
+
+.command{
+    font-size: 48px;
+}
+
+.currentPage {
+    color: white;
+    text-decoration: none;
+    background-color: blue;
+}
+
+.projectImage {
+    width: 30%;
+    height: auto;
+}
