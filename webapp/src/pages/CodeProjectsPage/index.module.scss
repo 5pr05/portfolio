@@ -1,29 +1,105 @@
 @use 'reset-css/sass/reset' as *;
 
 .container {
-    font-family: 'JetBrains Mono', monospace;
-    color: white;
+  font-size: 1.5vw;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+  padding: 3%;
 }
 
 .link {
-    color: white;
-    text-decoration: none;
-    &:hover {
-        background-color: blue;
-    }
-}
-
-.command{
-    font-size: 48px;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background-color: blue;
+  }
 }
 
 .currentPage {
-    color: white;
-    text-decoration: none;
-    background-color: blue;
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+}
+
+.command {
+  font-size: 2vw;
+  margin: 5vh 0 5vh 0;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.projectCard {
+  display: flex;
+  gap: 3rem;
+  margin: 5rem 0;
+  padding: 1rem;
+  align-items: stretch;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.projectCard.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projectImage {
-    width: 30%;
-    height: auto;
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.projectInfo {
+  line-height: 150%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projectInfoLabel {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.projectLinks {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+}
+
+.leftItem {
+  margin-right: auto;
+}
+
+.rightGroup {
+  display: flex;
+  gap: 2rem;
 }
