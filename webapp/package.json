@@ -12,6 +12,8 @@
     "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"
   },
   "dependencies": {
+    "@types/point-in-polygon": "^1.1.5",
+    "point-in-polygon": "^1.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",

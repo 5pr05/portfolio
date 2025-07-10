@@ -1,0 +1,258 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  max-width: 90vw;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 3;
+}
+
+.nav {
+  list-style: none;
+  position: absolute;
+  top: 15.8%;
+  left: 55.2%;
+  gap: 63%;
+  z-index: 5;
+  display: flex;
+}
+
+.navItem {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+  color: #5e4e40;
+  font-size: 1.3vw;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.navItem:hover {
+  transform: scale(0.9);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+}
+
+.screenArea {
+  z-index: 0;
+  position: absolute;
+  top: 6.5%;
+  left: 2%;
+  width: 95.5%;
+  height: 87%;
+  clip-path: polygon(49% 16%, 76% 17%, 76% 44%, 76% 92%, 25% 92%, 25% 55%, 25% 17%);
+  -webkit-clip-path: polygon(49% 16%, 76% 17%, 76% 44%, 76% 92%, 25% 92%, 25% 55%, 25% 17%);
+  background-color: #131212;
+}
+
+.customCursor {
+  z-index: 1;
+  position: fixed;
+  width: -20%;
+  height: -20%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.glitch {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 0, 255, 0.1),
+    rgba(255, 0, 255, 0.1) 2px,
+    transparent 12px,
+    transparent 16px
+  );
+  mix-blend-mode: screen;
+  animation: glitchMove 0.3s infinite;
+  opacity: 0.5;
+}
+
+@keyframes glitchMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(1px, -1px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-1px, 1px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(2px, -2px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+}
+
+.stickerWrapper {
+  position: absolute;
+  top: 31.9%;
+  left: 24.15%;
+  width: 15.8%;
+  aspect-ratio: 1 / 1;
+  z-index: 4;
+  overflow: visible;
+}
+
+.stickerClip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  clip-path: polygon(-5% 10%, 100% -10%, 150% 100%, 0 100%, 0 33%);
+  transition: clip-path 0.5s ease-in-out;
+  z-index: 3;
+}
+
+.stickerWrapper:hover .stickerClip {
+  clip-path: polygon(71% 10%, 150% -70%, 150% 100%, 56% 100%, 64% 40%);
+}
+
+.stickerBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -30%;
+  left: -109%;
+  rotate: 25deg;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+  object-fit: contain;
+}
+
+.stickerWrapper:hover .stickerBack {
+  left: 40%;
+  top: -13%;
+  transform: scale(1.1);
+}
+
+.sticker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -17%;
+  transform: rotate(-10.7deg);
+  z-index: 4;
+  object-fit: contain;
+}
+
+.linkTelegram {
+  opacity: 50%;
+  position: absolute;
+  width: 85%;
+  height: 50%;
+  bottom: 27.5%;
+  left: 6.5%;
+  z-index: 4;
+  clip-path: polygon(66% 35%, 78% 39%, 77% 46%, 65% 41%);
+  background-color: rgb(97, 168, 216);
+}
+
+.linkLinkedin {
+  opacity: 50%;
+  position: absolute;
+  width: 85%;
+  height: 50%;
+  bottom: 26%;
+  left: 6.5%;
+  z-index: 4;
+  clip-path: polygon(65% 41%, 75% 46%, 75% 50%, 63% 46%);
+  background-color: rgb(0, 47, 255);
+}
+
+.linkGmail {
+  opacity: 50%;
+  position: absolute;
+  width: 85%;
+  height: 50%;
+  bottom: 25%;
+  left: 6.5%;
+  z-index: 4;
+  clip-path: polygon(64% 46%, 71% 50%, 70% 53%, 62% 50%);
+  background-color: rgb(255, 71, 71);
+}
+
+.linkBehance {
+  opacity: 50%;
+  position: absolute;
+  width: 85%;
+  height: 50%;
+  bottom: 24%;
+  left: 7%;
+  z-index: 4;
+  clip-path: polygon(62% 50%, 72% 55%, 72% 59%, 61% 54%);
+  background-color: rgb(61, 71, 78);
+}
+
+.linkInstagram {
+  opacity: 50%;
+  position: absolute;
+  width: 85%;
+  height: 50%;
+  bottom: 23%;
+  left: 7%;
+  z-index: 4;
+  clip-path: polygon(61% 54%, 71% 58%, 70% 63%, 60% 58%);
+  background-color: rgb(247, 0, 255);
+}
+
+.swipeTooltip {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2vw;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 4px;
+  z-index: 2;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+}
