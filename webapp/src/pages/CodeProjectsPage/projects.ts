@@ -4,8 +4,8 @@ export const projects = [
     stack: 'React, Node.js',
     desc: 'A web application for managing tasks.',
     image: '/img/Rectangle.png',
-    github_link: '#',
-    user_link: '#',
+    github_link: '',
+    user_link: '',
   },
   {
     name: 'Project B',

@@ -89,13 +89,23 @@ export const CodeProjectsPage = () => {
               </p>
             </div>
             <div className={css.projectLinks}>
-              <a className={css.link} href={project.github_link}>
-                [ github ]
-              </a>
-              <a className={css.link} href={project.user_link}>
-                [ link ]
-              </a>
-            </div>
+  {project.github_link ? (
+    <a className={css.link} href={project.github_link} target="_blank" rel="noopener noreferrer">
+      [ github ]
+    </a>
+  ) : (
+    <span></span>
+  )}
+
+  {project.user_link ? (
+    <a className={css.link} href={project.user_link} target="_blank" rel="noopener noreferrer">
+      [ link ]
+    </a>
+  ) : (
+    <span>[ WIP ]</span>
+  )}
+</div>
+
           </div>
         </div>
       ))}

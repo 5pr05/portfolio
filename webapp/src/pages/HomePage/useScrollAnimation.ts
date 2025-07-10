@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
-export const useScrollAnimation = (totalFrames: number = 36) => {
+export const useScrollAnimation = (totalFrames: number = 36, isLoading: boolean) => {
   const [currentFrame, setCurrentFrame] = useState(0)
   const [hasStarted, setHasStarted] = useState(false)
   const [isLastFrame, setIsLastFrame] = useState(false)
@@ -12,6 +12,9 @@ export const useScrollAnimation = (totalFrames: number = 36) => {
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      // Prevent scroll animation if preloader is active
+      if (isLoading) return;
+
       e.preventDefault()
       if (isAnimatingRef.current) return
 
@@ -29,7 +32,7 @@ export const useScrollAnimation = (totalFrames: number = 36) => {
 
     window.addEventListener('wheel', handleWheel, { passive: false })
     return () => window.removeEventListener('wheel', handleWheel)
-  }, [currentFrame, totalFrames])
+  }, [currentFrame, totalFrames, isLoading])
 
   const playToEnd = () => {
     isAnimatingRef.current = true
