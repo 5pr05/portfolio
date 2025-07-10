@@ -13,7 +13,7 @@ export const useScrollAnimation = (totalFrames: number = 36, isLoading: boolean)
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       // Prevent scroll animation if preloader is active
-      if (isLoading) return;
+      if (isLoading) return
 
       e.preventDefault()
       if (isAnimatingRef.current) return

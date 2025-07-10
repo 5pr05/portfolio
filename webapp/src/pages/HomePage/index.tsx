@@ -13,13 +13,11 @@ export const HomePage = () => {
   const screenRef = useRef<HTMLDivElement>(null)
   const { currentFrame, hasStarted, isLastFrame, isStaticFrame } = useScrollAnimation(30, isLoading)
 
-
   const colors = ['#FFFF00', '#00FF00', '#FF0000']
   const colorIndexRef = useRef(0)
 
   const isTouchingEdgeRef = useRef(false)
   const wasInsideColorRef = useRef(false)
-  
 
   useEffect(() => {
     document.body.style.backgroundColor = 'black'
@@ -35,12 +33,10 @@ export const HomePage = () => {
       }
     }, 100)
 
-    const frameImages = Array.from({ length: 30 }, (_, i) => 
-      `/img/frames/${String(i + 1).padStart(3, '0')}.webp`
-    )
+    const frameImages = Array.from({ length: 30 }, (_, i) => `/img/frames/${String(i + 1).padStart(3, '0')}.webp`)
     const additionalImages = ['/img/sticker.png', '/img/stickerBack.png']
     const allImages = [...frameImages, ...additionalImages]
-    
+
     let loadedCount = 0
     const totalImages = allImages.length
 
@@ -226,11 +222,36 @@ export const HomePage = () => {
                 </div>
               </div>
               <div className={css.links}>
-                <a href="#" className={css.linkTelegram} target="_blank" rel="noopener noreferrer"></a>
-                <a href="#" className={css.linkLinkedin} target="_blank" rel="noopener noreferrer"></a>
-                <a href="#" className={css.linkGmail} target="_blank" rel="noopener noreferrer"></a>
-                <a href="#" className={css.linkBehance} target="_blank" rel="noopener noreferrer"></a>
-                <a href="#" className={css.linkInstagram} target="_blank" rel="noopener noreferrer"></a>
+                <a
+                  href="https://t.me/isfndr"
+                  className={css.linkTelegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/isfndr"
+                  className={css.linkLinkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+                <a
+                  href="mailto:isfndr.png@gmail.com"
+                  className={css.linkGmail}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+                <a
+                  href="https://www.behance.net/isfandiyar"
+                  className={css.linkBehance}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+                <a
+                  href="https://www.instagram.com/5pr05"
+                  className={css.linkInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
               </div>
             </>
           )}

@@ -76,36 +76,43 @@ export const CodeProjectsPage = () => {
           <div className={css.projectInfo}>
             <div className={css.projectTexts}>
               <h2>
-                <span className={css.projectInfoLabel}>name:&nbsp;</span>
+                <span>
+                  <span className={css.currentPage}>name:</span> &nbsp;
+                </span>
                 {project.name}
               </h2>
               <h2>
-                <span className={css.projectInfoLabel}>stack: </span>
+                <span>
+                  <span className={css.currentPage}>stack:</span>{' '}
+                </span>
                 {project.stack}
               </h2>
               <p>
-                <span className={css.projectInfoLabel}>desc:&nbsp;</span>
+                <span>
+                  <span className={css.currentPage}>desc:</span> &nbsp;
+                </span>
                 {project.desc}
               </p>
             </div>
             <div className={css.projectLinks}>
-  {project.github_link ? (
-    <a className={css.link} href={project.github_link} target="_blank" rel="noopener noreferrer">
-      [ github ]
-    </a>
-  ) : (
-    <span></span>
-  )}
+              {!project.github_link ? (
+                <span></span>
+              ) : project.github_link === 'wip' ? (
+                <span>[ WIP ]</span>
+              ) : (
+                <a className={css.link} href={project.github_link} target="_blank" rel="noopener noreferrer">
+                  [ github ]
+                </a>
+              )}
 
-  {project.user_link ? (
-    <a className={css.link} href={project.user_link} target="_blank" rel="noopener noreferrer">
-      [ link ]
-    </a>
-  ) : (
-    <span>[ WIP ]</span>
-  )}
-</div>
-
+              {project.user_link ? (
+                <a className={css.link} href={project.user_link} target="_blank" rel="noopener noreferrer">
+                  [ link ]
+                </a>
+              ) : (
+                <span></span>
+              )}
+            </div>
           </div>
         </div>
       ))}
