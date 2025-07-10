@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "prettify": "prettier --log-level=warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
     "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "pnpm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@types/point-in-polygon": "^1.1.5",

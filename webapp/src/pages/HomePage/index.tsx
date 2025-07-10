@@ -33,8 +33,8 @@ export const HomePage = () => {
       }
     }, 100)
 
-    const frameImages = Array.from({ length: 30 }, (_, i) => `/img/frames/${String(i + 1).padStart(3, '0')}.webp`)
-    const additionalImages = ['/img/sticker.png', '/img/stickerBack.png']
+    const frameImages = Array.from({ length: 30 }, (_, i) => `/portfolio/img/frames/${String(i + 1).padStart(3, '0')}.webp`)
+    const additionalImages = ['/portfolio/img/sticker.png', '/portfolio/img/stickerBack.png']
     const allImages = [...frameImages, ...additionalImages]
 
     let loadedCount = 0
@@ -162,7 +162,7 @@ export const HomePage = () => {
         </div>
       ) : (
         <div className={css.imageWrapper}>
-          <img src={`/img/frames/${String(currentFrame).padStart(3, '0')}.webp`} className={css.image} alt="Home" />
+          <img src={`/portfolio/img/frames/${String(currentFrame).padStart(3, '0')}.webp`} className={css.image} alt="Home" />
           <div className={css.screenArea} ref={screenRef}>
             <div className={css.glitch}></div>
           </div>
@@ -217,8 +217,8 @@ export const HomePage = () => {
             <>
               <div className={css.stickerWrapper}>
                 <div className={css.stickerClip}>
-                  <img className={css.sticker} src="/img/sticker.png" alt="sticker" />
-                  <img className={css.stickerBack} src="/img/stickerBack.png" alt="sticker" />
+                  <img className={css.sticker} src="/portfolio/img/sticker.png" alt="sticker" />
+                  <img className={css.stickerBack} src="/portfolio/img/stickerBack.png" alt="sticker" />
                 </div>
               </div>
               <div className={css.links}>
