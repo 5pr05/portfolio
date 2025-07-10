@@ -1,6 +1,6 @@
 {
-  "name": "@<project-name/webapp",
-  "private": true,
+  "name": "portfolio",
+  "homepage": "https://5pr05.github.io/portfolio/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,10 +9,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prettify": "prettier --log-level=warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
-    "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"
+    "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/point-in-polygon": "^1.1.5",
+    "gh-pages": "^6.3.0",
     "point-in-polygon": "^1.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
