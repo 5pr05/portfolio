@@ -11,9 +11,10 @@ export const CodeProjectsPage = () => {
 
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  document.body.style.backgroundColor = 'black'
+  
 
   useEffect(() => {
+    document.body.style.backgroundColor = 'black'
     let idx = 0
     const interval = setInterval(() => {
       if (idx < commandText.length) {

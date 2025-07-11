@@ -29,11 +29,11 @@ export const ArtProjectsPage = () => {
 
       <div className={css.body}>
         <div className={css.canvasArea}>
-          <img className={css.tbd} src="/portfolio/img/tbd.png" alt="To be done" />
+          <img className={css.tbd} src={`${import.meta.env.BASE_URL}img/tbd.png`} alt="To be done" />
           <Link to="/code" className={css.codeLink}>
-            <img src="/portfolio/img/codeLink.png" alt="Code" />
+            <img src={`${import.meta.env.BASE_URL}img/codeLink.png`} alt="Code" />
           </Link>
-          <img className={css.artLink} src="/portfolio/img/artLink.png" alt="Art" />
+        <img className={css.artLink} src={`${import.meta.env.BASE_URL}img/artLink.png`} alt="Art" />
         </div>
       </div>
     </div>
