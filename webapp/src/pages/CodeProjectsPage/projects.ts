@@ -76,7 +76,7 @@ export const projects = [
     stack: 'TypeScript, React Native, React Native Paper, Firebase',
     desc: 'A simple daily tool that helps you live more comfortably and get things done',
     image: `${import.meta.env.BASE_URL}img/projects/gradoo.png`,
-    github_link: '#',
-    user_link: '#',
+    github_link: 'wip',
+    user_link: '',
   },
 ]

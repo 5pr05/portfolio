@@ -61,9 +61,15 @@ export const HomePage = () => {
     allImages.forEach((src) => {
       const img = new Image()
       img.src = src
-      img.onload = handleImageLoad
-      img.onerror = handleImageError
+    
+      if (img.complete) {
+        handleImageLoad()
+      } else {
+        img.onload = handleImageLoad
+        img.onerror = handleImageError
+      }
     })
+    
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = screenRef.current?.getBoundingClientRect()
@@ -165,7 +171,7 @@ export const HomePage = () => {
         </div>
       ) : (
         <div className={css.imageWrapper}>
-          <img src={`${import.meta.env.BASE_URL}img/frames/${String(currentFrame).padStart(3, '0')}.webp`} className={css.image} alt="Home" />
+          <img loading="eager" src={`${import.meta.env.BASE_URL}img/frames/${String(currentFrame).padStart(3, '0')}.webp`} className={css.image} alt="Home" />
           <div className={css.screenArea} ref={screenRef}>
             <div className={css.glitch}></div>
           </div>
